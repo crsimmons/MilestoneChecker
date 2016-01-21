@@ -8,6 +8,10 @@ if ARGV[0].nil?
   exit
 end
 
+def title_cleaner(title)
+  title.downcase.gsub('v','').gsub(/^\./,'')
+end
+
 MAX_PAGES    = 5  # Set the max number of API calls to make
 NUM_PER_PAGE = 100 # Max allowed by API is 100
 
@@ -40,7 +44,11 @@ end
 
 milestones = Array.new()
 fullJSON.each do |j|
-  milestone = j["title"]
+  milestone = title_cleaner(j["title"])
   milestones.push(milestone)
 end
-puts "The highest release version is #{milestones.max}"
+
+milestones.sort.each do |m|
+  puts m
+end
+puts "The highest release version is v#{milestones.max}"
