@@ -48,7 +48,4 @@ fullJSON.each do |j|
   milestones.push(milestone)
 end
 
-milestones.sort.each do |m|
-  puts m
-end
 puts "The highest release version is v#{milestones.max}"
