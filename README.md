@@ -1,6 +1,6 @@
 #Milestone Checker
 
-This is a small script that accesses the closed milestones of a repository and returns the highest version number.  The script assumes that milestones are in the [semver](http://semver.org/) format.
+This is a small script that accesses the closed milestones of a repository and returns the highest version number.  The script assumes that milestones are in the [semver](http://semver.org/) format.  It will accept versions in the form `v1.1.1` or `v.1.1.1`
 
 ##Usage
 
